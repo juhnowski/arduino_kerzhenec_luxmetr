@@ -13,12 +13,13 @@ class BTN {
     unsigned char state;
     int onPressedCounter = 0;
     int timeout = 100;
-    call_back_pressed back_pressed;
-    call_back_released back_released;
     
   public:
     BTN(int pin, call_back_pressed back_pressed, call_back_released back_released);
     void check();    
+    void set_cb(call_back_pressed back_pressed, call_back_released back_released);
+    call_back_pressed back_pressed;
+    call_back_released back_released;
 };
 
 #endif

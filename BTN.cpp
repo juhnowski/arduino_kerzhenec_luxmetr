@@ -8,6 +8,11 @@ BTN::BTN(int _pin, call_back_pressed _back_pressed, call_back_released _back_rel
   back_released = _back_released;
   pinMode(pin, INPUT);
 }
+
+void BTN::set_cb(call_back_pressed _back_pressed, call_back_released _back_released){
+  back_pressed = _back_pressed;
+  back_released = _back_released;  
+}
     
 void BTN::check() {
   if (analogRead(pin)>1000) {
